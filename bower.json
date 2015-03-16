@@ -1,0 +1,10 @@
+{
+  "name": "photo-gallery",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "~3.3.3",
+    "modernizr": "~2.8.3",
+    "jquery": "~2.1.3"
+  },
+  "devDependencies": {}
+}
