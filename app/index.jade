@@ -8,7 +8,7 @@ html.no-js
 		meta(name="author" content="")
 		link(rel="icon" href="favicon.ico")
 
-		title leaflet cluster geohash
+		title Photo Gallery
 
 		// Place favicon.ico and apple-touch-icon.png in the root directory
 
@@ -23,6 +23,7 @@ html.no-js
 		// endbuild
 
 		// build:js scripts/vendor/modernizr.js
+		script(src="/bower_components/jquery/dist/jquery.min.js")
 		script(src="/bower_components/modernizr/modernizr.js")
 		// endbuild
 
@@ -36,8 +37,33 @@ html.no-js
 
 		div.site-wrapper
 			div.site-wrapper-inner
-				h1 Hola mundo!!!!
-
+				h1 Photo Gallery - demo
+				div#recordPictures
+					div
+						div#gallery-container
+							ul.rslides
+								li
+									img(src="http://media.eol.org/content/2013/04/04/14/25263_orig.jpg")
+								li
+									img(src="http://media.eol.org/content/2014/01/23/08/63762_orig.jpg")
+								li
+									img(src="http://media.eol.org/content/2011/08/04/16/40861_orig.jpg")
+								li
+									img(src="http://media.eol.org/content/2013/07/25/11/60097_orig.jpg")
+								li
+									img(src="http://media.eol.org/content/2013/03/14/06/20285_orig.jpg")
+								li
+									img(src="http://media.eol.org/content/2013/06/08/03/38817_orig.jpg")
+								li
+									img(src="http://media.eol.org/content/2013/07/02/07/91822_orig.jpg")
+								li
+									img(src="http://media.eol.org/content/2013/08/11/12/93377_orig.jpg")
+								li
+									img(src="http://media.eol.org/content/2013/10/09/00/60902_orig.jpg")
+								li
+									img(src="http://media.eol.org/content/2014/01/15/06/90904_orig.jpg")
+								li
+									img(src="http://www.biodiversidad.co:3000/imagen/resampled/48/Pteroglossus_torquatus_ilustracion_270x270.jpg")
 		// build:js scripts/vendor.js
 		// bower:js
 		script(src="/bower_components/jquery/dist/jquery.js")
@@ -45,20 +71,22 @@ html.no-js
 		// endbuild
 
 		// build:js scripts/vendor/bootstrap.js
-		script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js")
-		script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js")
-		script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js")
-		script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js")
-		script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js")
-		script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js")
-		script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js")
-		script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js")
-		script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js")
-		script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js")
-		script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js")
-		script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js")
+		//script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js")
+		//script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js")
+		//script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js")
+		//script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js")
+		//script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js")
+		//script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js")
+		//script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js")
+		//script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js")
+		//script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js")
+		//script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js")
+		//script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js")
+		//script(src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js")
 		// endbuild
 
 		// build:js scripts/main.js
+		script(src="scripts/photogallery.js")
+		script(src="/bower_components/photo.swipe/dist/photoswipe.js")
 		script(src="scripts/main.js")
 		// endbuild
