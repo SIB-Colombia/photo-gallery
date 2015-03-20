@@ -9,7 +9,6 @@
     "name": "Valentina Grajales",
     "email": "valegrajales@gmail.com"
   },
-  "dependencies": {},
   "files": [
     "app"
   ],
@@ -33,6 +32,7 @@
     "gulp-minify-html": "^1.0.1",
     "gulp-cache": "^0.2.8",
     "gulp-imagemin": "^2.2.1",
+    "gulp-rename": "^1.2.0",
     "jshint-stylish": "^1.0.1",
     "main-bower-files": "^2.6.2",
     "wiredep": "^2.2.2"

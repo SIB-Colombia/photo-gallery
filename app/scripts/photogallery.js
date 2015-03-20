@@ -7,6 +7,7 @@
  */
 
 /*jslint browser: true, sloppy: true, vars: true, plusplus: true, indent: 2 */
+/*jshint -W109 */
 
 (function ( $, window, i ) {
   $.fn.photoGallery = function (options) {
@@ -49,8 +50,6 @@
         // Helpers
         index = 0,
         $slide = $this.children(),
-        maxImageWidth = $this.css("width"),
-        maxImageHeight = $this.css("height"),
         length = $slide.size(),
         fadeTime = parseFloat(settings.speed),
         waitTime = parseFloat(settings.timeout),
@@ -192,7 +191,7 @@
             var n = i + 1;
             tabMarkup +=
               "<li>" +
-              "<a href='#' class='" + slideClassPrefix + n + "'>" + "<img src='" + this.children[0].src + "'>" + "</a>"
+              "<a href='#' class='" + slideClassPrefix + n + "'>" + "<img src='" + this.children[0].src + "'>" + "</a>" +
               "</li>";
           });
           $pager.append(tabMarkup);
