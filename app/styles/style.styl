@@ -26,29 +26,49 @@ body
   margin-left auto
 
 #gallery-container
+  margin 0 auto
   width 360px
   height 310px
-  margin 0 auto
 .rslides
   position relative
   list-style none
   overflow hidden
-  width 100%
   padding 0
   margin 0
   li
     -webkit-backface-visibility hidden
     position absolute
     display none
-    width 100%
-    left 0
-    top 0
+    width 360px
+    height 310px
+    text-align center
+    vertical-align middle
+    line-height 310px
     &:first-child
       position relative
       display block
-      float left
   img
-    display block
-    float left
-    width 100%
+    max-width 360px
+    max-height 310px
+    width auto
+    height auto
     border 0
+    margin 0 auto
+.rslides_tabs
+  float left
+  padding 0
+  text-align left
+  margin-top 10px
+  li.rslides_here
+    margin 2px
+  li
+    display inline
+    margin 2px
+    img
+      max-width 50px
+      max-height 50px
+      width auto
+      height auto
+      border 0
+      margin 0 auto
+      padding 2px

@@ -49,6 +49,8 @@
         // Helpers
         index = 0,
         $slide = $this.children(),
+        maxImageWidth = $this.css("width"),
+        maxImageHeight = $this.css("height"),
         length = $slide.size(),
         fadeTime = parseFloat(settings.speed),
         waitTime = parseFloat(settings.timeout),
@@ -142,6 +144,11 @@
         this.id = slideClassPrefix + i;
       });
 
+      // Add ID's to each image
+      $slide.each(function (i) {
+        this.children[0].id = slideClassPrefix + "image" + i;
+      });
+
       // Add max-width and classes
       $this.addClass(namespace + " " + namespaceIdx);
       if (options && options.maxwidth) {
@@ -185,7 +192,7 @@
             var n = i + 1;
             tabMarkup +=
               "<li>" +
-              "<a href='#' class='" + slideClassPrefix + n + "'>" + n + "</a>" +
+              "<a href='#' class='" + slideClassPrefix + n + "'>" + "<img src='" + this.children[0].src + "'>" + "</a>"
               "</li>";
           });
           $pager.append(tabMarkup);
