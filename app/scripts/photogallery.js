@@ -145,8 +145,14 @@
 
       // Add ID's to each image
       $slide.each(function (i) {
-        this.children[0].id = slideClassPrefix + "image" + i;
+        this.children[0].children[0].children[0].id = slideClassPrefix + "image" + i;
       });
+
+      /*$slide.each(function (i) {
+        this.children[0].children[0].children[0].onload = function() {
+          $('#'+this.id).parent().attr("data-size", this.naturalWidth + 'x' + this.naturalHeight)
+        };
+      });*/
 
       // Add max-width and classes
       $this.addClass(namespace + " " + namespaceIdx);
@@ -191,7 +197,7 @@
             var n = i + 1;
             tabMarkup +=
               "<li>" +
-              "<a href='#' class='" + slideClassPrefix + n + "'>" + "<img src='" + this.children[0].src + "'>" + "</a>" +
+              "<a href='#' class='" + slideClassPrefix + n + "'>" + "<img src='" + this.children[0].children[0].children[0].src + "'>" + "</a>" +
               "</li>";
           });
           $pager.append(tabMarkup);

@@ -150,7 +150,11 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['jshint', 'photogallery', 'html', 'images', 'fonts', 'extras'], function () {
+//gulp.task('build', ['jshint', 'photogallery', 'html', 'images', 'fonts', 'extras'], function () {
+//  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+//});
+
+gulp.task('build', ['photogallery', 'html', 'images', 'fonts', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
