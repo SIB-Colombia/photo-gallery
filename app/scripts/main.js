@@ -1,5 +1,8 @@
 /*jslint browser: true, sloppy: true, vars: true, plusplus: true, indent: 2 */
 /*jshint -W109 */
+/*jshint -W030 */
+/*global PhotoSwipe: false */
+/*global PhotoSwipeUI_Default: false */
 
 $(".rslides").photoGallery({
 	timeout: 10000,
