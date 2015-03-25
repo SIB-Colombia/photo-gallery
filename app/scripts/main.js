@@ -69,16 +69,13 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 	var onThumbnailsClick = function(e) {
 		e = e || window.event;
 		e.preventDefault ? e.preventDefault() : e.returnValue = false;
-		console.log(e);
 
 		var eTarget = e.target || e.srcElement;
-		console.log(eTarget);
 
 		// find root element of slide
 		var clickedListItem = closest(eTarget, function(el) {
 			return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
 		});
-		console.log(clickedListItem);
 
 		if(!clickedListItem) {
 			return;
@@ -86,7 +83,6 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
 		// find index of clicked item by looping through all child nodes
 		// alternatively, you may define index via data- attribute
-		console.log(clickedListItem.parentNode);
 		var clickedGallery = clickedListItem.parentNode,
 			childNodes = clickedListItem.parentNode.childNodes,
 			numChildNodes = childNodes.length,
@@ -109,8 +105,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
 		if(index >= 0) {
 				// open PhotoSwipe if valid index found
-			console.log("sooopas");
-			console.log(index);
+			index = clickedListItem.getAttribute('data-pswp-uid') - 1;
 			openPhotoSwipe( index, clickedGallery );
 		}
 		return false;
@@ -188,16 +183,20 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 	for(var i = 0, l = galleryElements.length; i < l; i++) {
 		galleryElements[i].getElementsByTagName('figure')[0].setAttribute('data-pswp-uid', i+1);
 		galleryElements[i].getElementsByTagName('figure')[0].onclick = onThumbnailsClick;
-		galleryElements[i].getElementsByTagName('figure')[0].children[0].children[0].onload = function() {
-			console.log(this.naturalWidth + 'x' + this.naturalHeight);
-			$('#'+this.id).parent().attr("data-size", this.naturalWidth + 'x' + this.naturalHeight)
-		};
 	}
+
+	$(window).load(function() {
+		// weave your magic here.
+		for(var i = 0, l = galleryElements.length; i < l; i++) {
+			var width = galleryElements[i].getElementsByTagName('figure')[0].children[0].children[0].naturalWidth;
+			var height = galleryElements[i].getElementsByTagName('figure')[0].children[0].children[0].naturalHeight;
+			$('#'+galleryElements[i].getElementsByTagName('figure')[0].children[0].children[0].id).parent().attr("data-size", width + 'x' + height);
+		}
+	});
 
 	// Parse URL and open gallery if it contains #&pid=3&gid=1
 	var hashData = photoswipeParseHash();
 	if(hashData.pid > 0 && hashData.gid > 0) {
-		console.log(hashData.gid - 1);
 		openPhotoSwipe( hashData.pid - 1 ,  galleryElements[ hashData.gid - 1 ], true );
 	}
 };
